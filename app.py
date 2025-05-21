@@ -19,7 +19,7 @@ def load_model():
 model = load_model()
 
 # Load data
-df = pd.read_csv('aapl.csv')  # Make sure file name is clean
+df = pd.read_csv('AAPL (4).csv')  # Make sure file name is clean
 df['Date'] = pd.to_datetime(df['Date'], dayfirst=True)
 df = df.sort_values('Date')
 last_date = df['Date'].max()
