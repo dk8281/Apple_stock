@@ -8,7 +8,7 @@ from datetime import timedelta
 # Config
 st.set_page_config(page_title="📈 Apple Stock Predictor", layout="centered")
 st.title("🍏 Apple Stock Price Forecast App")
-st.markdown("Forecast Apple's stock closing price using a trained **ARIMA(2,2,1)** model.")
+st.markdown("Forecast Apple's stock closing price using a trained **ARIMA** model.")
 
 # Load model
 @st.cache_resource
@@ -26,7 +26,7 @@ last_date = df['Date'].max()
 
 # 📆 Date range input (optional - forecasting always happens from last available date)
 st.sidebar.header("🔢 Forecast Settings")
-days = st.sidebar.slider("Select number of days to forecast", min_value=1, max_value=60, value=30)
+days = st.sidebar.slider("Select number of days to forecast", min_value=1, max_value=30, value=30)
 
 # Forecast
 forecast = model.forecast(steps=days)
